@@ -1,0 +1,25 @@
+{
+  "slug": "MyDrums",
+  "name": "My Drums",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "brand": "My Drums",
+  "author": "John Schneider",
+  "authorEmail": "",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "Kick",
+      "name": "Kick",
+      "description": "Kick Drum Generator",
+      "tags": [
+        "Drums"
+      ]
+    }
+  ]
+}
