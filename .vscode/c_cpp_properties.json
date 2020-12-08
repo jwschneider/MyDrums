@@ -5,7 +5,8 @@
             "includePath": [
                 "${default}",
                 "D:/RackSDK/Rack-SDK/include",
-                "D:/RackSDK/Rack-SDK/dep/include"
+                "D:/RackSDK/Rack-SDK/dep/include",
+                "C:\\msys64\\home\\John\\cpputest\\include"
             ],
             "defines": [
                 "_DEBUG",

@@ -1,11 +1,11 @@
-#include <string>
-#include <iostream>
+#include "CppUTest/TestHarness.h"
 
-static void test1()
+TEST_GROUP(FirstTestGroup)
 {
-    std::cout << "test1";
-}
-void testKick()
+
+};
+
+TEST(FirstTestGroup, SecondTest)
 {
-    test1();
+    FAIL("Fail me!");
 }

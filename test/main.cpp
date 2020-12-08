@@ -1,11 +1,6 @@
-#include <stdio.h>
-#include <assert.h>
-#include <string>
-
-#include "testKick.hpp"
+#include "CppUTest/CommandLineTestRunner.h"
 
 int main(int argc, char **argv)
 {
-    testKick();  
-    return 0;  
+    return CommandLineTestRunner::RunAllTests(argc, argv);
 }

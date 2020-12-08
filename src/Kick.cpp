@@ -55,9 +55,9 @@ struct Kick : Module {
 
 	Kick() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-		configParam(LOW_FUNDAMENTAL_PARAM, 0.f, 1.f, 0.f, "");
-		configParam(LOW_PARTIALS_PARAM, 0.f, 1.f, 0.f, "");
-		configParam(LOW_SPREAD_PARAM, 0.f, 1.f, 0.f, "");
+		configParam(LOW_FUNDAMENTAL_PARAM, 10.f, 50.f, 30.f, "Low Fundamental FQ", "Hz");
+		configParam(LOW_PARTIALS_PARAM, 1.f, 16.f, 8.f, "");
+		configParam(LOW_SPREAD_PARAM, -5.f, 5.f, 0.f, "Voice Spread", "Hz", 10.f, 1.f);
 		configParam(LOW_BEND_PARAM, 0.f, 1.f, 0.f, "");
 		configParam(LOW_DECAY_PARAM, 0.f, 1.f, 0.f, "");
 		configParam(LOW_LEVEL_PARAM, 0.f, 1.f, 0.f, "");
