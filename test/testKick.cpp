@@ -7,5 +7,7 @@ TEST_GROUP(FirstTestGroup)
 
 TEST(FirstTestGroup, SecondTest)
 {
-    FAIL("Fail me!");
+    FAIL("Intentional Fail");
+    // bool b = modelKick == 0;
+    // CHECK(b);
 }
