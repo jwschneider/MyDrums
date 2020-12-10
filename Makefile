@@ -21,6 +21,29 @@ DISTRIBUTABLES += $(wildcard LICENSE*)
 # Include the Rack plugin Makefile framework
 include $(RACK_DIR)/plugin.mk
 
-# Include cpputest framework makefile
-include test/Makefile
+#CPPUTest Makefile Variables
+#--- Input Variables
+TEST_SRC_DIRS = \
+	test
+
+SRC_DIRS = \
+	src
+
+INCLUDE_DIRS = \
+	$(CPPUTEST_HOME)/include \
+	$(RACK_DIR)/include \
+	$(RACK_DIR)/dep/include
+
+#--- Additional variables
+COMPONENT_NAME = MyDrums
+CPPUTEST_HOME = ../cpputest
+CPPUTEST_OBJS_DIR = build
+TEST_TARGET=test_runner
+CPPUTEST_USE_VPATH = Y
+
+
+
+
+#run MakefileWorker.mk with the variables defined here
+include $(CPPUTEST_HOME)/build/MakefileWorker.mk
 

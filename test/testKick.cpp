@@ -1,4 +1,4 @@
-#include "plugin.hpp"
+#include "../src/plugin.hpp"
 #include "CppUTest/TestHarness.h"
 
 TEST_GROUP(FirstTestGroup)
