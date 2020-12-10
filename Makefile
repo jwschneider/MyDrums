@@ -39,7 +39,7 @@ COMPONENT_NAME = MyDrums
 CPPUTEST_HOME = ../cpputest
 CPPUTEST_OBJS_DIR = build
 TEST_TARGET=test_runner
-CPPUTEST_USE_VPATH = Y
+CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Wswitch-default -Wswitch-enum -Wno-long-long -Wno-unused-parameter
 
 
 
