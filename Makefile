@@ -40,7 +40,8 @@ CPPUTEST_HOME = ../cpputest
 CPPUTEST_OBJS_DIR = build
 TEST_TARGET=test_runner
 CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Wswitch-default -Wswitch-enum -Wno-long-long -Wno-unused-parameter
-
+CPPUTEST_MEMLEAK_DETECTOR_NEW_MACRO_FILE = -include test/NewMacros.h
+CPPUTEST_LDFLAGS := -shared -L$(RACK_DIR) -lRack
 
 
 

@@ -1,2 +1,2 @@
-#include "plugin.hpp"
-#include "C:/msys64/home/John/cpputest/include/CppUTest/MemoryLeakDetectorNewMacros.h"
+#include "../src/plugin.hpp"
+#include "../../cpputest/include/CppUTest/MemoryLeakDetectorNewMacros.h"
