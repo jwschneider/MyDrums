@@ -1,13 +1,13 @@
 #include "NewMacros.h"
 #include "CppUTest/TestHarness.h"
 
+Module *kick;
 
 TEST_GROUP(FirstTestGroup)
 {
     void setup()
     {
-        Plugin *p = new Plugin();
-        init(p);
+        kick = modelKick->createModule();
     }
     void teardown()
     {
@@ -15,9 +15,8 @@ TEST_GROUP(FirstTestGroup)
 };
 
 TEST(FirstTestGroup, SecondTest)
-{
-    
-    Model *modelKick = pluginInstance->getModel("Kick");
+{   
+    kick->toJson();
     // bool b = modelKick == 0;
     // CHECK(b);
 }
