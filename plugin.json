@@ -20,6 +20,12 @@
       "tags": [
         "Drums"
       ]
+    },
+    {
+      "slug": "MyModule",
+      "name": "MyModule",
+      "description": "",
+      "tags": []
     }
   ]
 }
