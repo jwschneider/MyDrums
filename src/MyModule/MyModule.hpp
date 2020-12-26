@@ -2,7 +2,7 @@
 #include <app/ModuleWidget.hpp>
 #include <rack.hpp>
 
-namespace MyModule {
+namespace mymodule {
 
 class MyModule : public rack::engine::Module {
 	enum ParamIds {
@@ -28,6 +28,9 @@ class MyModule : public rack::engine::Module {
 
 
 class MyModulePanel : public rack::app::ModuleWidget {
+    MyModulePanel(MyModule *module)
+    {
 
+    }
 };
 } //namespace MyModule
