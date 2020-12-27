@@ -1,11 +1,16 @@
+
 #include "MyModuleControls.hpp"
 
 namespace mymodule {
-    MyModuleControls Controls;
+
     class MyModuleEngine {
+        MyModuleControls controls;
+        float phase;
+        float blinkPhase;
         public:
-            MyModuleEngine(MyModuleControls *controls);
-            void process();
+            MyModuleEngine() = default;
+            MyModuleEngine(MyModuleControls& controls);
+            void process(float sampleRate, float sampleTime);
     };
 
 }; //namespace mymodule

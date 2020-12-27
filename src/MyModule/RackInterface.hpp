@@ -10,7 +10,7 @@ using namespace rack::engine;
 using namespace std;
 
 
-class RackInterface : ControlInterface
+class RackInterface : public ControlInterface
 {
     public:
         RackInterface(vector<Param>& p, vector<Output>& o, vector<Input>& i, vector<Light>& l, vector<ParamQuantity*>& pq)
