@@ -1,4 +1,5 @@
 #include "MyModuleControls.hpp"
+#include "MyModule.hpp"
 
 using namespace mymodule;
 

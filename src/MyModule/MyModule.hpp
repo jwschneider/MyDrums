@@ -9,6 +9,7 @@ namespace mymodule {
 
 class MyModule : public rack::engine::Module {
     public:
+        MyModule();
         enum ParamIds {
             PITCH_PARAM,
             NUM_PARAMS
@@ -26,8 +27,7 @@ class MyModule : public rack::engine::Module {
             NUM_LIGHTS
         };
 
-        void process(const ProcessArgs& args) override {
-        };
+        void process(const ProcessArgs& args) override;
         
     private:
         MyModuleEngine *engine;

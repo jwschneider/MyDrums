@@ -1,3 +1,5 @@
+#pragma once
+
 class ControlInterface {
     public:
         virtual float getParam(int param);

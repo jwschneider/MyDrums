@@ -1,3 +1,4 @@
+#pragma once
 #include "ControlInterface.hpp"
 #include <plugin/Model.hpp>
 #include <engine/Param.hpp>

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ControlInterface.hpp"
-#include "MyModule.hpp"
 
 namespace mymodule
 {
