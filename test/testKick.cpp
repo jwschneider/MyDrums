@@ -9,6 +9,7 @@ TEST_GROUP(Init)
     void setup()
     {
         // when this line is run, something happens so that none of the tests get run, and Fail(0) does nothing
+        // this call leads to a segfault
         //kick = modelKick->createModule();
     }
     void teardown()
