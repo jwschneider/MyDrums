@@ -47,5 +47,5 @@ CPPUTEST_LDFLAGS := -Wl,-rpath,$(RACK_DIR) -L$(RACK_DIR) -lRack
 
 
 #run MakefileWorker.mk with the variables defined here
-include $(CPPUTEST_HOME)/build/MakefileWorker.mk
+include MakefileWorker.mk
 
