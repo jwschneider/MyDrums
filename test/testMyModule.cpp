@@ -8,23 +8,35 @@
 
 using namespace mymodule;
 
-MyModuleEngine _engine;
-TestHarness _harness;
+MyModuleEngine *_engine;
+TestHarness *_harness;
 
 
 TEST_GROUP(MyModuleTest)
 {
     void setup()
     {
-        _harness = TestHarness(MyModule::NUM_PARAMS, MyModule::NUM_OUTPUTS, MyModule::NUM_INPUTS, MyModule::NUM_LIGHTS);
-        _engine = MyModuleEngine(*_harness.getControls());
+        _harness = new TestHarness(MyModule::NUM_PARAMS, MyModule::NUM_OUTPUTS, MyModule::NUM_INPUTS, MyModule::NUM_LIGHTS);
+        _engine = new MyModuleEngine(_harness->getControls());
     }
     void teardown()
     {
+        delete _harness;
+        delete _engine;
     }
 };
 
 TEST(MyModuleTest, FirstTest)
 {   
-
+    float tolerance = 0.001;
+    _harness->setParam(MyModule::PITCH_PARAM, -1.f);
+    float C_3 = 130.81;
+    _engine->process(0, 1/(4*C_3));
+    DOUBLES_EQUAL(5.f, _harness->getOutput(MyModule::SINE_OUTPUT), tolerance); // pi/2
+    _engine->process(0, 1/(4*C_3));
+    DOUBLES_EQUAL(0.f, _harness->getOutput(MyModule::SINE_OUTPUT), tolerance); // pi/
+    _engine->process(0, 1/(4*C_3));
+    DOUBLES_EQUAL(-5.f, _harness->getOutput(MyModule::SINE_OUTPUT), tolerance); // 3pi/2
+    _engine->process(0, 1/(4*C_3));
+    DOUBLES_EQUAL(0.f, _harness->getOutput(MyModule::SINE_OUTPUT), tolerance); // 2pi
 }

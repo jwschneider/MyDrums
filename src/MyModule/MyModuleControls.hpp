@@ -14,7 +14,7 @@ namespace mymodule
     class MyModuleControls {
         public:
             MyModuleControls() = default;
-            MyModuleControls(vector<Param>& p, vector<Output>& o, vector<Input>& i, vector<Light>& l, vector<ParamQuantity*>& pq);
+            MyModuleControls(vector<Param>* p, vector<Output>* o, vector<Input>* i, vector<Light>* l, vector<ParamQuantity*>* pq);
             float getPitch();
             float getInputVoltage();
             void setOutputVoltage(float v);
@@ -24,10 +24,10 @@ namespace mymodule
             float getInput(int input);
             void setOutput(int output, float val);
             void setLight(int light, float val);
-            vector<Param> params;
-            vector<Output> outputs;
-            vector<Input> inputs;
-            vector<Light> lights;
-            vector<ParamQuantity*> paramQuantities;
+            vector<Param> *params;
+            vector<Output> *outputs;
+            vector<Input> *inputs;
+            vector<Light> *lights;
+            vector<ParamQuantity*> *paramQuantities;
     };
 };

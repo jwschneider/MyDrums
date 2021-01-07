@@ -4,12 +4,12 @@
 namespace mymodule {
 
     class MyModuleEngine {
-        MyModuleControls controls;
+        MyModuleControls *controls;
         float phase;
         float blinkPhase;
         public:
             MyModuleEngine() = default;
-            MyModuleEngine(MyModuleControls& controls);
+            MyModuleEngine(MyModuleControls *controls);
             void process(float sampleRate, float sampleTime);
     };
 

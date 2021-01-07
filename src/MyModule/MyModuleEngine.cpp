@@ -8,7 +8,7 @@ using namespace mymodule;
 using namespace rack::dsp;
 using namespace rack::math;
 
-mymodule::MyModuleEngine::MyModuleEngine(MyModuleControls& controls)
+mymodule::MyModuleEngine::MyModuleEngine(MyModuleControls *controls)
 {
     this->controls = controls;
     phase = 0.f;
@@ -19,8 +19,8 @@ mymodule::MyModuleEngine::MyModuleEngine(MyModuleControls& controls)
 void mymodule::MyModuleEngine::process(float sampleRate, float sampleTime)
 {
     // rewrite example process() to use only function calls to MyModuleControls
-    float pitch = controls.getPitch();
-    pitch += controls.getInputVoltage();
+    float pitch = controls->getPitch();
+    pitch += controls->getInputVoltage();
     pitch = clamp(pitch, -4.f, 4.f);
     float freq = FREQ_C4 * std::pow(2.f, pitch);
     // Accumulate the phase
@@ -28,10 +28,10 @@ void mymodule::MyModuleEngine::process(float sampleRate, float sampleTime)
     if (phase >= 0.5f)
         phase -= 1.f;
     float sine = std::sin(2.f * M_PI * phase);
-    controls.setOutputVoltage(5.f*sine);
+    controls->setOutputVoltage(5.f*sine);
     blinkPhase += sampleTime;
     if (blinkPhase >= 1.f)
         blinkPhase -= 1.f;
-    controls.setLightBrightness(blinkPhase < 0.5f ? 1.f : 0.f);
+    controls->setLightBrightness(blinkPhase < 0.5f ? 1.f : 0.f);
 
 }

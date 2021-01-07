@@ -4,7 +4,7 @@
 using namespace mymodule;
 
 
-mymodule::MyModuleControls::MyModuleControls(vector<Param>& p, vector<Output>& o, vector<Input>& i, vector<Light>& l, vector<ParamQuantity*>& pq)
+mymodule::MyModuleControls::MyModuleControls(vector<Param>* p, vector<Output>* o, vector<Input>* i, vector<Light>* l, vector<ParamQuantity*>* pq)
 {
     params = p;
     outputs = o;
@@ -20,17 +20,17 @@ void mymodule::MyModuleControls::setLightBrightness(float b) { setLight(MyModule
 
 float mymodule::MyModuleControls::getParam(int param)
 {
-    return params[param].getValue();
+    return (*params)[param].getValue();
 }
 float mymodule::MyModuleControls::getInput(int input)
 {
-    return inputs[input].getVoltage();
+    return (*inputs)[input].getVoltage();
 }
 void mymodule::MyModuleControls::setOutput(int output, float val)
 {
-    outputs[output].setVoltage(val);
+    (*outputs)[output].setVoltage(val);
 }
 void mymodule::MyModuleControls::setLight(int light, float val)
 {
-    lights[light].setBrightness(val);
+    (*lights)[light].setBrightness(val);
 }

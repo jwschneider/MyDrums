@@ -7,6 +7,10 @@ class TestHarness {
         TestHarness(int numParams, int numInputs, int numOutputs, int numLights);
         ~TestHarness();
         mymodule::MyModuleControls* getControls();
+        void setParam(int param, float val);
+        void setInput(int input, float val);
+        float getLight(int light);
+        float getOutput(float output);
     private:
         void initMembers(int numParams, int numInputs, int numOutputs, int numLights);
         void destroyMembers();

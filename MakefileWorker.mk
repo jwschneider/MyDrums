@@ -489,7 +489,7 @@ test-deps: $(TEST_DEPS)
 $(TEST_TARGET): $(TEST_DEPS)
 	@echo Linking $@
 	@echo deps $(TEST_DEPS)
-	$(SILENCE)$(CXX) -o $@ $^ $(LD_LIBRARIES) $(CPPU_LDFLAGS)
+	$(SILENCE)$(CXX) -g -o $@ $^ $(LD_LIBRARIES) $(CPPU_LDFLAGS)
 
 $(TARGET_LIB): $(OBJ)
 	@echo Building archive $@
