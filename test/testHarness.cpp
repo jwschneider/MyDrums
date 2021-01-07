@@ -6,6 +6,10 @@ TestHarness::TestHarness(int numParams, int numInputs, int numOutputs, int numLi
     initMembers(numParams, numInputs, numOutputs, numLights);
     ctrl = new mymodule::MyModuleControls(params, outputs, inputs, lights, paramQuantities);
 }
+TestHarness::~TestHarness()
+{
+    destroyMembers();
+}
 mymodule::MyModuleControls *TestHarness::getControls()
 {
     return ctrl;
@@ -37,5 +41,18 @@ void TestHarness::initMembers(int numParams, int numInputs, int numOutputs, int 
     {
         ParamQuantity* p = new ParamQuantity;
         paramQuantities.push_back(p);
+    }
+}
+
+void TestHarness::destroyMembers()
+{
+    params.clear();
+    inputs.clear();
+    outputs.clear();
+    lights.clear();
+    while (!paramQuantities.empty())
+    {
+        delete (paramQuantities.back());
+        paramQuantities.pop_back();
     }
 }
