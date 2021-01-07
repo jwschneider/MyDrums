@@ -515,7 +515,7 @@ $(CPPUTEST_OBJS_DIR)/test/%.cc.o: test/%.cc
 $(CPPUTEST_OBJS_DIR)/test/%.cpp.o: test/%.cpp
 	@echo compiling $(notdir $<)
 	$(SILENCE)mkdir -p $(dir $@)
-	$(SILENCE)$(CXX) $(CPPU_CXXFLAGS) $(CXXFLAGS) $(DEP_FLAGS) $(OUTPUT_OPTION) $<
+	$(SILENCE)$(CXX) $(CPPU_CXXFLAGS) $(CXXFLAGS) $(DEP_FLAGS) -c $(OUTPUT_OPTION) $<
 
 $(CPPUTEST_OBJS_DIR)/test/%.c.o: test/%.c
 	@echo compiling $(notdir $<)

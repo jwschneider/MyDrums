@@ -28,7 +28,8 @@ TEST_SRC_DIRS = \
 	test
 
 SRC_DIRS = \
-	src
+	src \
+	src/MyModule
 
 INCLUDE_DIRS = \
 	$(CPPUTEST_HOME)/include \

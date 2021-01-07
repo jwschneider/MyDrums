@@ -2,8 +2,8 @@
 
 #include <engine/Module.hpp>
 #include <app/ModuleWidget.hpp>
-#include <rack.hpp>
 #include "MyModuleEngine.hpp"
+#include "../plugin.hpp"
 
 namespace mymodule {
 

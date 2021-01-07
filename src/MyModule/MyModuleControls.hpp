@@ -1,5 +1,5 @@
+//#include <plugin/Model.hpp>
 #pragma once
-#include <plugin/Model.hpp>
 #include <engine/Param.hpp>
 #include <engine/Port.hpp>
 #include <engine/Light.hpp>
