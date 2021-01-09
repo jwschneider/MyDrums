@@ -19,11 +19,11 @@ class ModuleControls {
             lights = l;
             paramQuantities = pq;
         }
-    private:
         float getParam(int param) {return (*params)[param].getValue();}
         float getInput(int input) {return (*inputs)[input].getVoltage();}
         void setOutput(int output, float val) {(*outputs)[output].setVoltage(val);}
         void setLight(int light, float val) {(*lights)[light].setBrightness(val);}
+    private:
         vector<Param> *params;
         vector<Output> *outputs;
         vector<Input> *inputs;

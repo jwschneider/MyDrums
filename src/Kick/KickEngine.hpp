@@ -5,11 +5,12 @@
 namespace kick{
 
     class KickEngine : ModuleEngine {
+        KickControls *controls;
         public:
-        KickEngine(ModuleControls *controls) : ModuleEngine { controls }
+        KickEngine(KickControls *controls)
         {
-
+            this->controls = controls;
         }
-        void process(float sampleRate, float sampleTime);
+        void process(float sampleRate, float sampleTime) override;
     };
 } //namespace Kick

@@ -1,16 +1,21 @@
 #pragma once
+#include "../ModuleEngine.hpp"
 #include "MyModuleControls.hpp"
 
 namespace mymodule {
 
-    class MyModuleEngine {
-        MyModuleControls *controls;
+    class MyModuleEngine : ModuleEngine {
         float phase;
         float blinkPhase;
+        MyModuleControls *controls;
         public:
-            MyModuleEngine() = default;
-            MyModuleEngine(MyModuleControls *controls);
-            void process(float sampleRate, float sampleTime);
+            MyModuleEngine(MyModuleControls *controls)
+            {
+                phase = 0.f;
+                blinkPhase = 0.f;
+                this->controls = controls;
+            };
+            void process(float sampleRate, float sampleTime) override;
     };
 
 }; //namespace mymodule
