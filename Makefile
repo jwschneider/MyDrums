@@ -12,6 +12,7 @@ LDFLAGS +=
 
 # Add .cpp files to the build
 SOURCES += $(wildcard src/MyModule/*.cpp)
+SOURCES += $(wildcard src/Kick/*.cpp)
 SOURCES += $(wildcard src/*.cpp)
 
 # Add files to the ZIP package when running `make dist`
@@ -29,7 +30,8 @@ TEST_SRC_DIRS = \
 
 SRC_DIRS = \
 	src \
-	src/MyModule
+	src/MyModule \
+	src/Kick
 
 INCLUDE_DIRS = \
 	$(CPPUTEST_HOME)/include \
