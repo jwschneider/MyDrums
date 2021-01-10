@@ -2,14 +2,16 @@
 
 using namespace kick;
 
+const float SQRT2 = 1.41421356237309504880;
+
 Kick::Kick() {
 	config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 	configParam(LOW_FUNDAMENTAL_PARAM, 10.f, 50.f, 30.f, "Low Fundamental FQ", "Hz");
-	configParam(LOW_PARTIALS_PARAM, 1.f, 16.f, 8.f, "");
-	configParam(LOW_SPREAD_PARAM, -5.f, 5.f, 0.f, "Voice Spread", "Hz", 10.f, 1.f);
-	configParam(LOW_BEND_PARAM, 0.f, 1.f, 0.f, "");
-	configParam(LOW_DECAY_PARAM, 0.f, 1.f, 0.f, "");
-	configParam(LOW_LEVEL_PARAM, 0.f, 1.f, 0.f, "");
+	configParam(LOW_PARTIALS_PARAM, 1, 16, 8, "Number of partials");
+	configParam(LOW_SPREAD_PARAM, 0.f, 90.f, 45.f, "Voice Spread", "Hz");
+	configParam(LOW_BEND_PARAM, -1.f, 1.f, 0.f, "Bend in decay of partial magnitude");
+	configParam(LOW_DECAY_PARAM, -2.f, 0.f, -1.f, "Decay time", "s", 10.f, 1.f);
+	configParam(LOW_LEVEL_PARAM, 0.f, SQRT2, 1.f, "Fundamental level", "db", -10.f, 40.f);
 	configParam(MID_TONE_PARAM, 0.f, 1.f, 0.f, "");
 	configParam(MID_CHARACTER_PARAM, 0.f, 1.f, 0.f, "");
 	configParam(MID_LP_PARAM, 0.f, 1.f, 0.f, "");

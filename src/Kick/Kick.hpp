@@ -4,6 +4,7 @@
 #include "KickEngine.hpp"
 #include "../plugin.hpp"
 
+
 namespace kick {
 
 class Kick : public Module {
