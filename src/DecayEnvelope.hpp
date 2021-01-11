@@ -6,14 +6,23 @@ using namespace std;
 class DecayEnvelope {
     public:
         DecayEnvelope() = default;
-        DecayEnvelope(float duration, float sampleRate)
+        void init(float duration, float sampleRate)
         {
             this->sampleRate = sampleRate;
             currentLevel = 1.f;
             multiplier = 1.0 + log(minimumLevel)/(sampleRate * duration);
         }
-        void process(float sampleRate, float sampleTime);
-        float getValue();
+        void process(float sampleRate, float sampleTime)
+        {
+            for (int i = 0; i < std::floor(sampleRate * sampleTime); i++)
+            {
+                nextSample();
+            }
+        }
+        float getValue()
+        {
+            return currentLevel;
+        }
     private:
         float nextSample() {
             currentLevel *= multiplier;

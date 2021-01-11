@@ -1,27 +1,6 @@
 #include "KickEngine.hpp"
 
 using namespace kick;
-using namespace dsp;
-
-// class FreqMagPair
-// {
-
-//     public:
-//         FreqMagPair() {
-//             val = new tuple {0.f, 0.f};
-//         }
-//         FreqMagPair(float freq, float magnitude)
-//         {
-//             val = new tuple {freq, magnitude};
-//         }
-//         ~FreqMagPair() {
-//             delete val;
-//         }
-//         float GetFrequency() { return std::get<0>(*val); }
-//         float GetMagnitude() { return std::get<1>(*val); }
-//     private:
-//         tuple<float, float> *val;
-// };
 
 float scaleFrequency(float freq, float fundamental, float spread, int partials, float bend)
 {
@@ -91,6 +70,16 @@ float KickEngine::processLows(float sampleRate, float sampleTime)
     lowDecay.process(sampleRate, sampleTime);
     acc *= lowDecay.getValue();
     return acc;
+}
+
+float KickEngine::processMids(float sampleRate, float sampleTime)
+{
+    return 0;
+}
+
+float KickEngine::processHighs(float sampleRate, float sampleTime)
+{
+    return 0;
 }
 
 void KickEngine::process(float sampleRate, float sampleTime) {

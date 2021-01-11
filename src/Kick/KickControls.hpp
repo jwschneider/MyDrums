@@ -1,6 +1,5 @@
 #pragma once
 #include "../ModuleControls.hpp"
-#include "Kick.hpp"
 
 namespace kick {
 class KickControls : public ModuleControls {
@@ -9,10 +8,8 @@ class KickControls : public ModuleControls {
     {
 
     }
-    void setOutputVoltage(float val)
-    {
-        this->setOutput(Kick::OUTPUT_OUTPUT, val);
-    }
+    void setOutputVoltage(float val);
+    
     // Fundamental frequency in [10, 100] Hz
     float getFundamentalFQ();
     // Frequency spread in [0, 90] Hz

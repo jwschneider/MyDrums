@@ -3,6 +3,7 @@
 #include "KickControls.hpp"
 #include "../SimpleOscillator.hpp"
 #include "../DecayEnvelope.hpp"
+#include <dsp/digital.hpp>
 
 namespace kick{
 
@@ -12,7 +13,6 @@ namespace kick{
         KickEngine(KickControls *controls)
         {
             this->controls = controls;
-            init();
         }
         void process(float sampleRate, float sampleTime) override;
         private:
@@ -33,6 +33,6 @@ namespace kick{
         // float _decay;
         DecayEnvelope lowDecay;
         vector<SimpleOscillator*> lowOscillators;
-        TSchmittTrigger<float> trigger;
+        rack::dsp::SchmittTrigger trigger;
     };
 } //namespace Kick
