@@ -23,5 +23,11 @@ class KickControls : public ModuleControls {
     int getPartials();
     // Gets amplitude in [0, 1]
     float getLevel();
+    // Gets low FQ decay time in [0.01, 1]s
+    float getLowDecay();
+    // Gets longest of the three decay elements in [0.01, 1]s
+    float getLongestDecay();
+    // Gets trigger
+    float getTrigger();
 };
 } //namespace Kick
