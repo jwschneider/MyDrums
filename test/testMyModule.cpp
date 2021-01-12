@@ -10,6 +10,7 @@ using namespace mymodule;
 
 MyModuleEngine *_engine;
 TestHarness *_harness;
+MyModuleControls *_controls;
 
 
 TEST_GROUP(MyModuleTest)
@@ -17,10 +18,13 @@ TEST_GROUP(MyModuleTest)
     void setup()
     {
         _harness = new TestHarness(MyModule::NUM_PARAMS, MyModule::NUM_OUTPUTS, MyModule::NUM_INPUTS, MyModule::NUM_LIGHTS);
-        _engine = new MyModuleEngine(_harness->getControls());
+        _controls = new MyModuleControls(&_harness->params, &_harness->outputs, &_harness->inputs, &_harness->lights, &_harness->paramQuantities);
+        _engine = new MyModuleEngine(_controls);
+
     }
     void teardown()
     {
+        delete _controls;
         delete _harness;
         delete _engine;
     }

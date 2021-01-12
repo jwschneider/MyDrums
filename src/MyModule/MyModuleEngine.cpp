@@ -11,7 +11,6 @@ using namespace rack::math;
 void mymodule::MyModuleEngine::process(float sampleRate, float sampleTime)
 {
     // rewrite example process() to use only function calls to MyModuleControls
-    MyModuleControls ctrl = (MyModuleControls) *controls;
     float pitch = controls->getPitch();
     pitch += controls->getInputVoltage();
     pitch = clamp(pitch, -4.f, 4.f);

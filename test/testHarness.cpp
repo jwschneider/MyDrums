@@ -4,15 +4,11 @@
 TestHarness::TestHarness(int numParams, int numInputs, int numOutputs, int numLights)
 {
     initMembers(numParams, numInputs, numOutputs, numLights);
-    ctrl = new mymodule::MyModuleControls(&params, &outputs, &inputs, &lights, &paramQuantities);
 }
+
 TestHarness::~TestHarness()
 {
     destroyMembers();
-}
-mymodule::MyModuleControls *TestHarness::getControls()
-{
-    return ctrl;
 }
 
 void TestHarness::setParam(int param, float val)
