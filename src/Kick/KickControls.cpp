@@ -58,6 +58,7 @@ float KickControls::getLowDecay()
     float inputSeconds = std::pow(2, inputVoltage / 5.f - 2.f);
     float paramVoltage = this ->getParam(Kick::LOW_DECAY_PARAM);
     float paramSeconds = std::pow(2, paramVoltage);
+    return inputSeconds + paramSeconds;
 }
 float KickControls::getLongestDecay()
 {
