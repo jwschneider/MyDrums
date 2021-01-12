@@ -1,10 +1,11 @@
 #pragma once
-#include "NewMacros.h"
-#include "CppUTest/TestHarness.h"
 #include "../src/MyModule/MyModuleEngine.hpp"
 #include "../src/MyModule/MyModuleControls.hpp"
 #include "testHarness.hpp"
 #include "../src/MyModule/MyModule.hpp"
+#include "CppUTest/TestHarness.h"
+
+
 
 using namespace mymodule;
 
