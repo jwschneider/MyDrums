@@ -6,8 +6,6 @@ class TestHarness {
         TestHarness() = default;        
         TestHarness(int numParams, int numInputs, int numOutputs, int numLights);
         ~TestHarness();
-        ModuleControls* getControls();
-        void setControls(ModuleControls *ctrl);
         void setParam(int param, float val);
         void setInput(int input, float val);
         float getLight(int light);

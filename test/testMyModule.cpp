@@ -8,8 +8,6 @@
 
 using namespace mymodule;
 
-namespace testmymodule {
-
 MyModuleEngine *_engine;
 TestHarness *_harness;
 MyModuleControls *_controls;
@@ -76,5 +74,3 @@ TEST(MyModuleTest, ParamAndInputTest)
     _engine->process(0, 1/(4*C_2));
     DOUBLES_EQUAL(0.f, _harness->getOutput(MyModule::SINE_OUTPUT), tolerance); // 2pi
 };
-
-} // namespace mymoduletest

@@ -9,11 +9,11 @@ namespace mymodule {
         float blinkPhase;
         MyModuleControls *controls;
         public:
-            MyModuleEngine(MyModuleControls *controls)
+            MyModuleEngine(MyModuleControls *ctrl)
             {
                 phase = 0.f;
                 blinkPhase = 0.f;
-                this->controls = controls;
+                controls = ctrl;
             };
             void process(float sampleRate, float sampleTime) override;
     };

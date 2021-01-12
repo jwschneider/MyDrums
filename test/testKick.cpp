@@ -1,10 +1,10 @@
-#pragma once
-#include "NewMacros.h"
-#include "CppUTest/TestHarness.h"
-#include "testHarness.hpp"
-#include "../src/Kick/Kick.hpp"
-#include "../src/Kick/KickEngine.hpp"
-#include "../src/Kick/KickControls.hpp"
+// #pragma once
+// #include "NewMacros.h"
+// #include "CppUTest/TestHarness.h"
+// #include "testHarness.hpp"
+// #include "../src/Kick/Kick.hpp"
+// #include "../src/Kick/KickEngine.hpp"
+// #include "../src/Kick/KickControls.hpp"
 
 // using namespace kick;
 
