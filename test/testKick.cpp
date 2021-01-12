@@ -1,10 +1,19 @@
+#pragma once
 #include "NewMacros.h"
 #include "CppUTest/TestHarness.h"
+#include "../src/Kick/KickControls.hpp"
+#include "../src/Kick/KickEngine.hpp"
+#include "../src/Kick/Kick.hpp"
+#include "testHarness.hpp"
 
-Module *kick;
+using namespace kick;
+
 
 TEST_GROUP(FirstTestGroup)
 {
+    KickEngine *_engine;
+    TestHarness *_harness;
+    KickControls *_controls;
     void setup()
     {
     }

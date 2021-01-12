@@ -8,13 +8,13 @@
 
 using namespace mymodule;
 
-MyModuleEngine *_engine;
-TestHarness *_harness;
-MyModuleControls *_controls;
-
 
 TEST_GROUP(MyModuleTest)
 {
+    
+    MyModuleEngine *_engine;
+    TestHarness *_harness;
+    MyModuleControls *_controls;
     void setup()
     {
         _harness = new TestHarness(MyModule::NUM_PARAMS, MyModule::NUM_OUTPUTS, MyModule::NUM_INPUTS, MyModule::NUM_LIGHTS);
