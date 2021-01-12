@@ -5,6 +5,7 @@ TestHarness::TestHarness(int numParams, int numInputs, int numOutputs, int numLi
 {
     initMembers(numParams, numInputs, numOutputs, numLights);
 }
+
 TestHarness::~TestHarness()
 {
     destroyMembers();

@@ -1,25 +1,36 @@
 #pragma once
-#include "NewMacros.h"
-#include "CppUTest/TestHarness.h"
 #include "../src/MyModule/MyModuleEngine.hpp"
 #include "../src/MyModule/MyModuleControls.hpp"
 #include "testHarness.hpp"
 #include "../src/MyModule/MyModule.hpp"
+#include "CppUTest/TestHarness.h"
 
-using namespace mymodule;
 
+<<<<<<< HEAD
 MyModuleEngine *_engine;
 TestHarness *_harness;
 MyModuleControls *_controls;
+=======
+
+using namespace mymodule;
+>>>>>>> ade129b728a719a202b4f6f9b57c57097a12fa2a
 
 
 TEST_GROUP(MyModuleTest)
 {
+    
+    MyModuleEngine *_engine;
+    TestHarness *_harness;
+    MyModuleControls *_controls;
     void setup()
     {
         _harness = new TestHarness(MyModule::NUM_PARAMS, MyModule::NUM_OUTPUTS, MyModule::NUM_INPUTS, MyModule::NUM_LIGHTS);
         _controls = new MyModuleControls(&_harness->params, &_harness->outputs, &_harness->inputs, &_harness->lights, &_harness->paramQuantities);
         _engine = new MyModuleEngine(_controls);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ade129b728a719a202b4f6f9b57c57097a12fa2a
     }
     void teardown()
     {
