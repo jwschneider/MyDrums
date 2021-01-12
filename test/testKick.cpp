@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-// #pragma once
-// #include "NewMacros.h"
-// #include "CppUTest/TestHarness.h"
-// #include "testHarness.hpp"
-// #include "../src/Kick/Kick.hpp"
-// #include "../src/Kick/KickEngine.hpp"
-// #include "../src/Kick/KickControls.hpp"
-
-// using namespace kick;
-
-// namespace testkick {
-// KickEngine *_engine;
-// TestHarness *_harness;
-=======
 #pragma once
 #include "NewMacros.h"
 #include "CppUTest/TestHarness.h"
@@ -24,19 +9,25 @@
 using namespace kick;
 
 
-TEST_GROUP(FirstTestGroup)
+TEST_GROUP(KickTest)
 {
     KickEngine *_engine;
     TestHarness *_harness;
     KickControls *_controls;
     void setup()
     {
+        _harness = new TestHarness{Kick::NUM_PARAMS, Kick::NUM_OUTPUTS, Kick::NUM_INPUTS, Kick::NUM_LIGHTS};
     }
     void teardown()
     {
+        delete _harness;
     }
 };
->>>>>>> ade129b728a719a202b4f6f9b57c57097a12fa2a
+
+TEST(KickTest, FirstTest)
+{
+    0;
+}
 
 // TEST_GROUP(FirstTestGroup)
 // {

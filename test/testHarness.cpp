@@ -1,9 +1,9 @@
 #include "testHarness.hpp"
 
 
-TestHarness::TestHarness(int numParams, int numInputs, int numOutputs, int numLights)
+TestHarness::TestHarness(int numParams, int numOutputs, int numInputs, int numLights)
 {
-    initMembers(numParams, numInputs, numOutputs, numLights);
+    initMembers(numParams, numOutputs, numInputs, numLights);
 }
 
 TestHarness::~TestHarness()
@@ -28,7 +28,7 @@ float TestHarness::getOutput(float output)
     return outputs[output].getVoltage();
 }
 
-void TestHarness::initMembers(int numParams, int numInputs, int numOutputs, int numLights)
+void TestHarness::initMembers(int numParams, int numOutputs, int numInputs, int numLights)
 {
     for (int i = 0; i < numParams; i++)
     {
